@@ -25,12 +25,12 @@ This is a minimum reproducible example for testing nextJs router behavior.
 
 #### Dev: it doesn't work, empty searchParams
 
-1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[...id]/page.tsx`
+1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[id]/page.tsx`
 2. Click the button <= searchParams in server log is empty
 
 #### Build: it doesn't work, no log
 
-1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[...id]/page.tsx`
+1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[id]/page.tsx`
 2. Click the button <= no server log, I think it's because the page is static
 
 ## Scenarios3: without force-dynamic and without generateStaticParams
