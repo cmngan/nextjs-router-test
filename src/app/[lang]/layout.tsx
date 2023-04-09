@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export async function generateStaticParams() {
-	return [{ id: 'ccc' }];
+	return [{ lang: 'en-hk' }];
 }
 
 export default function RootLayout({

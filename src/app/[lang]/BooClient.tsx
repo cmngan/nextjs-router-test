@@ -7,8 +7,8 @@ export default function BooClient() {
 
 	return (
 		<div className="flex gap-4">
-			<button onClick={() => router.push('/ccc?foo=aaa')}>foo=aaa</button>
-			<button onClick={() => router.push('/ccc?foo=bbb')}>foo=bbb</button>
+			<button onClick={() => router.push('/en-hkc?foo=aaa')}>foo=aaa</button>
+			<button onClick={() => router.push('/en-hkc?foo=bbb')}>foo=bbb</button>
 		</div>
 	);
 }
