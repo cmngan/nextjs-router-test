@@ -9,7 +9,7 @@ This is a minimum reproducible example for testing nextJs router behavior.
 1. Clone the repo
 2. Run `npm install`
 3. Run `npm run dev`
-4. Open `http://localhost:3000/ccc` in your browser
+4. Open `http://localhost:3000/en-hk` in your browser
 5. Click the button <= it will throw error, [Error: Dynamic server usage: force-dynamic]
 
 #### Build: it works
@@ -18,7 +18,7 @@ This is a minimum reproducible example for testing nextJs router behavior.
 2. Run `npm install`
 3. Run `npm run build`
 4. Run `npm run start`
-5. Open `http://localhost:3000/ccc` in your browser
+5. Open `http://localhost:3000/en-hk` in your browser
 6. Click the button <= it works
 
 ## Scenarios2: without force-dynamic and with generateStaticParams
