@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a minimum reproducible example for testing nextJs router behavior.
 
-## Getting Started
+# Scenarios
 
-First, run the development server:
+## Scenarios1: with force-dynamic and generateStaticParams
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+#### Dev: it will throw error
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run dev`
+4. Open `http://localhost:3000/ccc` in your browser
+5. Click the button <= it will throw error, [Error: Dynamic server usage: force-dynamic]
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Build: it works
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.ts`.
+1. Clone the repo
+2. Run `npm install`
+3. Run `npm run build`
+4. Run `npm run start`
+5. Open `http://localhost:3000/ccc` in your browser
+6. Click the button <= it works
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Scenarios2: without force-dynamic and with generateStaticParams
 
-## Learn More
+#### Dev: it doesn't work, empty searchParams
 
-To learn more about Next.js, take a look at the following resources:
+1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[...id]/page.tsx`
+2. Click the button <= searchParams in server log is empty
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Build: it doesn't work, no log
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Similar to Scenarios1, but remove `force-dynamic` in `/src/pages/[...id]/page.tsx`
+2. Click the button <= no server log, I think it's because the page is static
 
-## Deploy on Vercel
+## Scenarios3: without force-dynamic and without generateStaticParams
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+It works
